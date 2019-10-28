@@ -1,11 +1,25 @@
+/*
+ * DweetIO Client Program
+ * 
+ * NodeMCU acts as a client that repeatedly sends a GET request to the DweetIO
+ * service to retrieve the latest Dweet to a user-specificed Dweet tag.
+ * 
+ * To use this, modify the constants under "---- MODIFIABLE CONSTANTS ----" for
+ * your own personal use-case.
+ */
+
+
+// ---- DEPENDENCIES ----
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
 // ---- MODIFIABLE CONSTANTS ----
-const char * ssid = "LU-IoT2"; // put your ssid (network name) here
-const char * password = "CSC49008"; // put your network password here
+const char * ssid = "ssid"; // put your ssid (network name) here
+const char * password = "password"; // put your network password here
+const String dweetTag = "tag"; // put your unique dweet tag here
+
+// ---- UNMODIFIABLE CONSTANTS ----
 const String host = "dweet.io";
-const String dweetTag = "CSC49008BMR";
 
 /*
  * Setup
